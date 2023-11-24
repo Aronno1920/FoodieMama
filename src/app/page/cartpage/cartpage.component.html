@@ -1,0 +1,54 @@
+<app-notfound
+  [visible]="!cart || cart.items.length <= 0"
+  notFoundMessage="Items not fould!"
+  resetLinkText="Go to Homepage!"
+></app-notfound>
+
+<div *ngIf="cart && cart.items.length > 0" class="container">
+  <ul>
+    <li *ngFor="let item of cart.items">
+      <div>
+        <img [src]="item.food.imageUrl" [alt]="item.food.name" />
+      </div>
+      <div>
+        <a routerLink="/foodpage/{{ item.food.id }}" target="_blank">{{
+          item.food.name
+        }}</a>
+      </div>
+      <div>
+        <select
+          #quantitytSelect
+          (change)="changeQuantity(item, quantitytSelect.value)"
+        >
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+        </select>
+      </div>
+      <div>
+        {{ item.food.price | currency }}
+      </div>
+      <div>
+        <button class="remove-button" (click)="removeFromCart(item)">
+          Remove
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <div class="checkout">
+    <div>
+      <div class="food-count">{{ cart.items.length }}</div>
+      <div class="total-price">{{ cart.totalPrice | currency }}</div>
+    </div>
+
+    <a routerLink="/checkout">Proceed to Checkout</a>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<app-notfound
+  [visible]="!food"
+  notFoundMessage="Items not fould!"
+  resetLinkText="Go to Homepage!"
+></app-notfound>
+
+<div *ngIf="food" class="container">
+  <img [src]="food.imageUrl" [alt]="food.name" />
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{ food.name }}
+      </span>
+    </div>
+
+    <div class="divTags">
+      <span *ngFor="let tag of food.tags">
+        {{ tag }}
+      </span>
+    </div>
+    <div class="cook-time">
+      <span>
+        Time to cook about <strong>{{ food.cookTime }}</strong> minutes.
+      </span>
+    </div>
+    <div class="price">
+      <span>
+        {{ food.price | currency }}
+      </span>
+    </div>
+
+    <button (click)="addToCart()">Add to Cart</button>
+  </div>
+</div>

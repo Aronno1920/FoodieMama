@@ -1,0 +1,31 @@
+.site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  background-color: #8b0b41;
+  opacity: 0.8;
+}
+
+.site-footer .content {
+  flex: 0.3;
+  border-radius: 5px;
+  background: rgba(238, 149, 149, 0.226);
+  border: 1px solid white;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  
+}
+
+.site-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #8b0b41;
+  color: white;
+  padding: 10px;
+}

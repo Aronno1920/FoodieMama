@@ -1,0 +1,39 @@
+header {
+  /* background-color: #8b0b41; */
+  padding: 0;
+  border-bottom: 2px solid #8b0b41;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: #af1313;
+  flex: 1;
+}
+
+nav {
+  flex: 4;
+}
+
+a:hover {
+  color: white;
+  background-color: #8b0b41;
+}
+a.sitelogo {
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: end;
+}
+nav ul li a {
+  padding: 1em;
+  display: inline-block;
+}
